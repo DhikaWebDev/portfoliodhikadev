@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Investor Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{ box-sizing:border-box }
+body{
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(circle at top, #050b18, #000);
+  color:#fff;
+  font-family:Segoe UI, sans-serif;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND FUTURISTIC BOXES */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+}
+.box{
+  position:absolute;
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(0,140,255,.25), rgba(0,255,255,.15));
+  box-shadow:0 0 25px rgba(0,140,255,.25), inset 0 0 20px rgba(0,200,255,.15);
+  animation:float 22s linear infinite;
+}
+.box.small{ width:70px; height:70px }
+.box.medium{ width:120px; height:120px }
+.box.large{ width:180px; height:180px }
+
+.box:nth-child(1){ top:15%; left:10%; animation-duration:26s }
+.box:nth-child(2){ top:65%; left:18%; animation-duration:30s }
+.box:nth-child(3){ top:35%; left:70%; animation-duration:28s }
+.box:nth-child(4){ top:75%; left:80%; animation-duration:34s }
+.box:nth-child(5){ top:50%; left:50%; animation-duration:24s }
+
+@keyframes float{
+  from{ transform:translateY(0) rotate(0deg) }
+  to{ transform:translateY(-120vh) rotate(360deg) }
+}
+
+/* CONTENT */
+.wrapper{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+}
+.container{
+  max-width:760px;
+  width:100%;
+  padding:56px 24px;
+  animation:fadeIn 1.2s ease forwards;
+}
+
+h1{
+  font-size:38px;
+  margin-bottom:12px;
+}
+.subtitle{
+  opacity:.75;
+  margin-bottom:56px;
+  max-width:520px;
+}
+
+/* SECTIONS */
+.section{
+  margin-bottom:56px;
+  opacity:0;
+  transform:translateY(30px);
+  animation:slideUp .9s ease forwards;
+}
+.section:nth-of-type(1){ animation-delay:.2s }
+.section:nth-of-type(2){ animation-delay:.4s }
+.section:nth-of-type(3){ animation-delay:.6s }
+.section:nth-of-type(4){ animation-delay:.8s }
+
+.section h2{
+  font-size:22px;
+  margin-bottom:16px;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(0,160,255,.25);
+}
+.section p{
+  line-height:1.9;
+  opacity:.9;
+}
+
+/* 🌸 PINK NEON ABOUT BOX */
+.about-box{
+  margin-top:18px;
+  padding:24px 22px;
+  border-radius:16px;
+  background:linear-gradient(135deg, rgba(255,0,150,.12), rgba(255,0,200,.05));
+  border:1px solid rgba(255,0,180,.45);
+  box-shadow:
+    0 0 30px rgba(255,0,180,.35),
+    inset 0 0 25px rgba(255,0,180,.15);
+}
+
+/* QUOTES */
+.quote{
+  margin:22px 0;
+  padding-left:18px;
+  border-left:3px solid;
+  border-image:linear-gradient(180deg,#00b3ff,#00fff0) 1;
+  font-style:italic;
+  opacity:.85;
+}
+.quote span{
+  display:block;
+  margin-top:8px;
+  font-size:13px;
+  opacity:.6;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.skill{
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:14px;
+  background:linear-gradient(135deg, rgba(0,140,255,.15), rgba(0,255,255,.1));
+  border:1px solid rgba(0,160,255,.35);
+  box-shadow:0 0 12px rgba(0,160,255,.15);
+  transition:transform .2s ease;
+}
+.skill:hover{ transform:translateY(-3px) }
+
+/* CONTACT */
+.contact a{
+  display:inline-block;
+  margin-top:18px;
+  padding:16px 28px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#00b3ff,#00ffd5);
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(0,255,255,.4);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.contact a:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 45px rgba(0,255,255,.6);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+@keyframes slideUp{ to{ opacity:1; transform:translateY(0) } }
+
+/* MOBILE */
+@media(max-width:600px){
+  h1{ font-size:30px }
+  .container{ padding:42px 18px }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="box small"></div>
+  <div class="box medium"></div>
+  <div class="box large"></div>
+  <div class="box medium"></div>
+  <div class="box small"></div>
+</div>
+
+<div class="wrapper">
+<div class="container">
+
+  <h1>Halo, saya Dhika Putra P.</h1>
+  <div class="subtitle">
+    Berfokus pada analisis saham, manajemen risiko, dan pengambilan keputusan
+    investasi jangka panjang berbasis data.
+  </div>
+
+  <div class="section">
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p>
+        Saya memiliki minat besar pada dunia investasi dan pasar saham.
+        Saya menikmati proses menganalisis laporan keuangan, memahami
+        pergerakan pasar, serta membangun pola pikir rasional dan disiplin.
+        Tujuan saya adalah berkembang menjadi investor yang konsisten
+        dan bertanggung jawab dalam jangka panjang.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Investment Philosophy</h2>
+    <div class="quote">
+      “The stock market is a device for transferring money from the impatient to the patient.”
+      <span>— Warren Buffett</span>
+    </div>
+    <div class="quote">
+      “Know what you own, and know why you own it.”
+      <span>— Peter Lynch</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Analisis Saham</div>
+      <div class="skill">Fundamental Analysis</div>
+      <div class="skill">Manajemen Risiko</div>
+      <div class="skill">Long-Term Investing</div>
+      <div class="skill">Disiplin & Konsistensi</div>
+    </div>
+  </div>
+
+  <div class="section contact">
+    <h2>Contact</h2>
+    <p>Terbuka untuk diskusi seputar saham dan investasi.</p>
+    <a href="https://wa.me/6283143457482" target="_blank">
+      Chat via WhatsApp
+    </a>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>
